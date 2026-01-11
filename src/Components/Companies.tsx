@@ -1,4 +1,3 @@
-import React from "react";
 import SectionHeading from "../Shared/SectionHeading";
 import "../Constants";
 import { AppText, CompanyImage } from "../Constants";
@@ -11,7 +10,7 @@ const Companies = () => {
           secondTitle={AppText.WorkedFor}
         />
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 m-3">
-          {CompanyImage.map((item, index) => (
+          {CompanyImage.map((item, _index) => (
             <div className="m-3 transition-all ease-in-out hover:scale-110">
               <img src={item.imageUrl} className="h-[60px]" />
             </div>
