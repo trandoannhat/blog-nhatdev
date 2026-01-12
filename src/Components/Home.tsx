@@ -1,53 +1,85 @@
-import { AppText } from "../Constants";
+import { AppText } from "../constants";
 import { homeImage } from "../assets";
 import Typewriter from "typewriter-effect";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="flex p-[20px] md:px-20 justify-between flex-col md:flex-row">
-      <div className="flex w-full flex-row justify-end">
-        <div className="flex w-full flex-col items-start">
-          <h1 className="text-[35px] md:text-[40px] font-bold">
-            {AppText.hello}
+    <section
+      id="home"
+      className="flex p-[20px] md:px-20 justify-between flex-col md:flex-row"
+    >
+      {/* Left content */}
+      <div className="flex w-full flex-col items-start justify-center">
+        {/* Hello */}
+        <h1 className="text-[35px] md:text-[40px] font-bold">
+          {AppText.hello}
+        </h1>
+
+        {/* I am */}
+        <div className="flex items-center flex-wrap">
+          <h1 className="text-[35px] md:text-[40px] font-bold mr-3">
+            {AppText.Iam}
           </h1>
 
-          <div className="flex items-center">
-            <h1 className="text-[35px] md:text-[40px] font-bold mr-3">
-              {AppText.Iam}
-            </h1>
-
-            <div className="text-[35px] md:text-[40px] font-bold text-purple-600">
-              <Typewriter
-                options={{
-                  strings: [
-                    AppText.RahulSanap,
-                    AppText.FrontedDeveloper,
-                    AppText.UIUXDesigner,
-                    AppText.BackendDeveloper,
-                  ],
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
-            </div>
+          <div className="text-[35px] md:text-[40px] font-bold text-purple-600">
+            <Typewriter
+              options={{
+                strings: [
+                  AppText.RahulSanap,
+                  AppText.FrontedDeveloper,
+                  AppText.UIUXDesigner,
+                  AppText.BackendDeveloper,
+                ],
+                autoStart: true,
+                loop: true,
+              }}
+            />
           </div>
+        </div>
 
-          <p className="my-5 text-gray-400 max-w-[500px]">
-            Tôi là lập trình viên web, có kinh nghiệm xây dựng website, hệ thống
-            quản trị và ứng dụng web hiện đại bằng React và các công nghệ liên
-            quan.
-          </p>
+        {/* Description */}
+        <p className="my-5 text-gray-400 max-w-[520px] leading-relaxed">
+          Tôi là lập trình viên web với niềm đam mê xây dựng{" "}
+          <strong>website, hệ thống quản trị</strong> và{" "}
+          <strong>ứng dụng web hiện đại</strong>.
+          <br />
+          Kinh nghiệm làm việc với React, TypeScript, Tailwind CSS và backend
+          .NET / NodeJS.
+        </p>
 
-          <button className="hover:z-50 transition-all duration-300 ease-in-out hover:scale-110 bg-purple-600 px-4 py-2 rounded-md text-white">
-            Tải CV
-          </button>
+        {/* Action buttons */}
+        <div className="flex flex-wrap gap-4 mt-8">
+          {/* Xem dự án */}
+          <Link
+            to="/projects"
+            className="px-6 py-3 rounded-xl bg-purple-600 text-white font-semibold
+              hover:bg-purple-700 transition duration-300"
+          >
+            🚀 Xem dự án
+          </Link>
+
+          {/* Liên hệ */}
+          <a
+            href="#contact"
+            className="px-6 py-3 rounded-xl border-2 border-purple-600
+              text-purple-600 font-semibold
+              hover:bg-purple-600 hover:text-white transition duration-300"
+          >
+            📩 Liên hệ
+          </a>
         </div>
       </div>
 
+      {/* Right image */}
       <div className="w-full flex justify-center mt-10 md:mt-0">
-        <img src={homeImage} className="w-[200px] md:w-[300px]" />
+        <img
+          src={homeImage}
+          alt="Home illustration"
+          className="w-[220px] md:w-[320px] animate-fade-in"
+        />
       </div>
-    </div>
+    </section>
   );
 };
 

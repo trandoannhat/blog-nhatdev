@@ -1,5 +1,5 @@
 import { contactusbg, phone } from "../assets";
-import { AppText } from "../Constants";
+import { AppText } from "../constants";
 import SectionHeading from "../Shared/SectionHeading";
 
 function ContactUs() {

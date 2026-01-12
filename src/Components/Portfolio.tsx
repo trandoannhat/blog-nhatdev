@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AppText, portfolio } from "../Constants";
+import { AppText, portfolio } from "../constants";
 import SectionHeading from "../Shared/SectionHeading";
 import { robo } from "../assets";
 

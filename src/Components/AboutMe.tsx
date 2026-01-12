@@ -1,5 +1,5 @@
 import { laptop, wave } from "../assets";
-import { aboutSection, AppText } from "../Constants";
+import { aboutSection, AppText } from "../constants";
 
 const AboutMe = () => {
   return (

@@ -1,7 +1,7 @@
 import "../assets";
 import { skill } from "../assets";
-import "../Constants";
-import { AppText, skillsList, workDetail } from "../Constants";
+import "../constants";
+import { AppText, skillsList, workDetail } from "../constants";
 
 const Skills = () => {
   return (

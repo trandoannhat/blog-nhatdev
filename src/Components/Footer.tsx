@@ -1,19 +1,32 @@
-import { AppText, socialNetwork } from "../Constants";
+import { AppText, socialNetwork } from "../constants";
 
 const Footer = () => {
   return (
-    <div className="bg-gray-200 mt-10 p-20 items-center flex flex-col  px-10 md:px-80">
-      <div className="flex gap-4">
-        {socialNetwork.map((item, _index) => (
-          <div>
-            <img src={item.logo} className="w-[40px]" />
-          </div>
+    <footer className="bg-gray-200 mt-10 py-16 flex flex-col items-center px-6 md:px-80">
+      {/* Social icons */}
+      <div className="flex gap-6">
+        {socialNetwork.map((item) => (
+          <a
+            key={item.id}
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition transform hover:scale-110 opacity-80 hover:opacity-100"
+          >
+            <img
+              src={item.logo}
+              alt={item.name ?? "social icon"}
+              className="w-[36px]"
+            />
+          </a>
         ))}
       </div>
-      <h1 className="text-gray-500 text-[15px] mt-4">
+
+      {/* Copyright */}
+      <p className="text-gray-500 text-sm mt-6 text-center">
         {AppText.copywriteText}
-      </h1>
-    </div>
+      </p>
+    </footer>
   );
 };
 

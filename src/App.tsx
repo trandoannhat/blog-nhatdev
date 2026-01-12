@@ -1,34 +1,31 @@
+import { Routes, Route } from "react-router-dom";
+import MainLayout from "./Layout/MainLayout";
 
-import './App.css';
-import {NavBar,Home, Portfolio} from './Components';
-import AboutMe from './Components/AboutMe';
-import Companies from './Components/Companies';
-import ContactUs from './Components/ContactUs';
-import Footer from './Components/Footer';
-import Skills from './Components/Skills';
+// CHỖ NÀY: Trỏ đúng vào file HomePage.tsx mà chúng ta vừa viết lúc nãy
+import HomePage from "./Layout/HomePage";
 
+import ProjectsPage from "./Components/ProjectsPage";
+import ContactPage from "./pages/ContactPage";
+import AboutPage from "./pages/AboutPage";
+import SkillsPage from "./pages/SkillsPage";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
-    <div className="App">
-      {/* NavBar */}
-      <NavBar/>
-      {/* Home */}
-      <Home/>
-      {/* About Me */}
-      <AboutMe/>
-      {/* Skills */}
-      <Skills/>
-      {/* Portfolio */}
-      <Portfolio/>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route element={<MainLayout />}>
+          {/* Bây giờ HomePage sẽ chứa: Home, AboutMe, Skills, Portfolio... */}
+          <Route path="/" element={<HomePage />} />
 
-      {/* Companies */}
-      <Companies/>
-      {/* Contact Us */}
-      <ContactUs/>
-
-      <Footer/>
-    </div>
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/skills" element={<SkillsPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 

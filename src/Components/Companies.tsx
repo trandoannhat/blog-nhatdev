@@ -1,6 +1,6 @@
 import SectionHeading from "../Shared/SectionHeading";
-import "../Constants";
-import { AppText, CompanyImage } from "../Constants";
+import "../constants";
+import { AppText, CompanyImage } from "../constants";
 const Companies = () => {
   return (
     <div id="companies" className="bg-purple-200 p-5">
